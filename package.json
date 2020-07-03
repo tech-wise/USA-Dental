@@ -1,5 +1,6 @@
 {
   "name": "dental-demo",
+  "homepage":"https://technologywisdom.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

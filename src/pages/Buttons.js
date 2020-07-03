@@ -1,19 +1,16 @@
 import React, {Component} from 'react';
-
-
-
 class Buttons extends React.Component{
     render(){
         return(
             <div>
 
 {/* Recods Listing Start */}
-<div className="container">
+<div className="container buttons-page">
     <div className="row">
         <div className="col-md-12">
             <h3>Notifications</h3>
         
-            <button type="button" className="btn btn-primary">Primary</button>
+<button type="button" className="btn btn-primary">Primary</button>
 <button type="button" className="btn btn-secondary">Secondary</button>
 <button type="button" className="btn btn-success">Success</button>
 <button type="button" className="btn btn-danger">Danger</button>
@@ -25,7 +22,7 @@ class Buttons extends React.Component{
 <button type="button" className="btn btn-link">Link</button>
 
 
-<a className="btn btn-primary" href="#" role="button">Link</a>
+<a className="btn btn-primary" href="/" role="button">Link</a>
 <button className="btn btn-primary" type="submit">Button</button>
 <input className="btn btn-primary" type="button" value="Input" />
 <input className="btn btn-primary" type="submit" value="Submit" />
@@ -67,15 +64,15 @@ class Buttons extends React.Component{
 <button type="button" className="btn btn-secondary btn-lg btn-block">Block level button</button>
 
 
-<a href="#" className="btn btn-primary btn-lg active" role="button" aria-pressed="true">Primary link</a>
-<a href="#" className="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Link</a>
+<a href="/" className="btn btn-primary btn-lg active" role="button" aria-pressed="true">Primary link</a>
+<a href="/" className="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Link</a>
 
 
 <button type="button" className="btn btn-lg btn-primary" disabled>Primary button</button>
 <button type="button" className="btn btn-secondary btn-lg" disabled>Button</button>
 
-<a href="#" className="btn btn-primary btn-lg disabled" tabindex="-1" role="button" aria-disabled="true">Primary link</a>
-<a href="#" className="btn btn-secondary btn-lg disabled" tabindex="-1" role="button" aria-disabled="true">Link</a>
+<a href="/" className="btn btn-primary btn-lg disabled" tabindex="-1" role="button" aria-disabled="true">Primary link</a>
+<a href="/" className="btn btn-secondary btn-lg disabled" tabindex="-1" role="button" aria-disabled="true">Link</a>
 
 
 <button type="button" className="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">

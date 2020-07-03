@@ -12,11 +12,11 @@ class Header extends React.Component{
 			<div className="row">
 				<div className="col-md-2 logo">
                 <Link to="/" className="nav-link">
-                    <img src="assets/images/logo.png" />
+                    <img src="assets/images/logo.png"  alt="logo"/>
                 </Link>
 				</div>
 				<div className="col-md-10">
-					<nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+					<nav className="navbar navbar-expand-lg">
 						<button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 							<span className="navbar-toggler-icon"></span>
 						</button>
@@ -31,10 +31,6 @@ class Header extends React.Component{
 
 								<li className="nav-item">
                                     <Link to="/login" className="nav-link"> Login</Link>    
-								</li>
-
-								<li className="nav-item">
-                                    <Link to="/signup" className="nav-link"> Signup</Link>    
 								</li>
 
 								<li className="nav-item">
@@ -55,7 +51,7 @@ class Header extends React.Component{
 
 
 								<li className="nav-item">
-                                    <Link to="/text" className="nav-link"> Cards</Link>    
+                                    <Link to="/cards" className="nav-link"> Cards</Link>    
 								</li>
 							</ul>
 						</div>
