@@ -1,0 +1,54 @@
+[
+    {
+        "id":"1",
+        "modulecode":"MCUB",
+        "modulename":"Current Billing",
+        "moduleslug":"ABC",
+        "features":"Import,Export,Reports"
+       
+    },
+    {
+        "id":"2",
+        "modulecode":"MARM",
+        "modulename":"AR Management",
+        "moduleslug":"ABC",
+        "features":"View Records,Add Records,Edit Records"
+    },
+    {
+        "id":"3",
+        "modulecode":"MSCM",
+        "modulename":"Scheduling Module",
+        "moduleslug":"ABC",
+        "features":"View Records,Add Records,Edit Records,Delete Records,Import,Export"
+    },
+    {
+        "id":"4",
+        "modulecode":"MINM",
+        "modulename":"Incentive Module",
+        "moduleslug":"ABC",
+        "features":"Import,Export,Reports"
+    },
+    {
+        "id":"5",
+        "modulecode":"MOFM",
+        "modulename":"Office Management",
+        "moduleslug":"ABC",
+        "features":"View Records,Add Records,Edit Records,Delete Records,Import,Export,Reports"
+    },
+    {
+        "id":"7",
+        "modulecode":"MACC",
+        "modulename":"Accounting",
+        "moduleslug":"ABC",
+        "features":"Import,Export,Reports"
+    },
+    {
+        "id":"8",
+        "modulecode":"MEVB",
+        "modulename":"Eligibility Verification & Benefits Breakdown",
+        "moduleslug":"ABC",
+        "features":"View Records,Add Records,Edit Records,Delete Records,Import,Export,Reports"
+    }
+    
+
+]

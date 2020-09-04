@@ -1,0 +1,30 @@
+[
+    {
+        "name":"view",
+        "label":"View Records"
+    },
+    {
+        "name":"Add",
+        "label":"Add Records"
+    },
+    {
+        "name":"edit",
+        "label":"Edit Records"
+    },
+    {
+        "name":"Delete",
+        "label":"Delete Records"
+    }
+    ,{
+        "name":"import",
+        "label":"Import"
+    },
+    {
+        "name":"export",
+        "label":"Export"
+    },
+    {
+        "name":"reports",
+        "label":"Reports"
+    }
+]
