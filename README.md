@@ -5,5 +5,5 @@
 
 <br><br>
 <h6>$ &nbsp;&nbsp; npm install</h6>
-<h6>$ &nbsp;&nbsp; npm install</h6>
+<h6>$ &nbsp;&nbsp; npm run</h6>
 
