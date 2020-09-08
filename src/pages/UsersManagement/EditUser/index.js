@@ -3,7 +3,7 @@ import Select from '@material-ui/core/Select';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
 import PhotoCamera from '@material-ui/icons/PhotoCamera';
-import { makeStyles } from '@material-ui/core/styles';
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 
 import {
   Card,
@@ -13,40 +13,27 @@ import {
   TextField,
   Button
 } from '@material-ui/core';
-
-const useStyles = makeStyles({
-  cardCategoryWhite: {
-    color: 'rgba(255,255,255,.62)',
-    margin: '0',
-    fontSize: '14px',
-    marginTop: '0',
-    marginBottom: '0'
+const TextfieldTheme = createMuiTheme({
+  palette: {
+    primary: {
+      main: "#21BFD9",
+    },
+    secondary:{
+      main:"#253053",
+    }
   },
-  cardTitleWhite: {
-    color: '#FFFFFF',
-    marginTop: '0px',
-    minHeight: 'auto',
-    fontWeight: '300',
-    fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
-    marginBottom: '3px',
-    textDecoration: 'none'
-  },
-  TextFieldStyle: {},
-  FormControlStyle: {},
-  saveButton: {
-    marginRight: '15px'
-  }
 });
 
+
+
 export default function EditUser() {
-  const classes = useStyles();
 
   return (
     <>
       <Card className="card-box mb-spacing-6-x2">
         <div className="card-header">
           <div className="card-header--title">
-            <h4 className="font-size-lg mb-0 py-2 font-weight-bold">
+            <h4 className="font-size-lg mb-0 py-2 font-weight-bold color-pb">
               Update User
             </h4>
           </div>
@@ -57,83 +44,96 @@ export default function EditUser() {
           </div> */}
         </div>
         <CardContent>
-          <Grid container spacing={3}>
+        <Grid container spacing={3}>
             <Grid item xs={12} sm={6} md={4}>
+            <ThemeProvider theme={TextfieldTheme} >
               <TextField
-                className={classes.TextFieldStyle}
+                color="secondary"
                 id="firstname"
                 label="First Name"
                 fullWidth
               />
+              </ThemeProvider>
             </Grid>
             <Grid item xs={12} sm={6} md={4}>
+            <ThemeProvider theme={TextfieldTheme} >
               <TextField
-                className={classes.TextFieldStyle}
+                color="secondary"
                 id="lastname"
                 label="Last Name"
                 fullWidth
               />
+              </ThemeProvider>
             </Grid>
             <Grid item xs={12} sm={6} md={4}>
+            <ThemeProvider theme={TextfieldTheme} >
               <TextField
-                className={classes.TextFieldStyle}
+                color="secondary"
                 id="email"
                 label="Email"
                 fullWidth
               />
+              </ThemeProvider>
             </Grid>
             <Grid item xs={12} sm={6} md={4}>
+            <ThemeProvider theme={TextfieldTheme} >
               <TextField
-                className={classes.TextFieldStyle}
+                color="secondary"
                 id="username"
                 label="Username"
                 fullWidth
               />
+              </ThemeProvider>
             </Grid>
             <Grid item xs={12} sm={6} md={4}>
+            <ThemeProvider theme={TextfieldTheme} >
               <TextField
-                className={classes.TextFieldStyle}
+                color="secondary"
                 id="password"
                 label="Password"
                 type="password"
                 fullWidth
               />
+              </ThemeProvider>
             </Grid>
             <Grid item xs={12} sm={6} md={4}>
-              <FormControl className={classes.FormControlStyle} fullWidth>
-                <InputLabel htmlFor="age-native-simple">Role</InputLabel>
+            <ThemeProvider theme={TextfieldTheme} >
+              <FormControl fullWidth>
+                <InputLabel htmlFor="age-native-simple" color="secondary">Role</InputLabel>
                 <Select
-                  native
+                color="secondary"
                   inputProps={{
                     name: 'age',
                     id: 'age-native-simple'
                   }}>
-                  <option aria-label="None" value="" />
-                  <option value="Back office Delivery manager">
-                    Back office Delivery manager
-                  </option>
-                  <option value="Scheduling Manager">Scheduling Manager</option>
-                  <option value="Accounting manager">Accounting manager</option>
-                  <option value="Inventory Manager">Inventory Manager</option>
-                  <option value="QA and QC Manager">QA and QC Manager</option>
+                  <option aria-label="None" value="" className="hoverColor-Theme"/>
+                  <option value="BODM" className="hoverColor-Theme">Back office delivery manager</option>
+                  <option value="SCHM" className="hoverColor-Theme">Scheduling Manager</option>
+                  <option value="ACCM" className="hoverColor-Theme">Accounting manager</option>
+                  <option value="INVM" className="hoverColor-Theme">Inventory Manager</option>
+                  <option value="QACM" className="hoverColor-Theme">QA and QC Manager</option>
                 </Select>
               </FormControl>
+              </ThemeProvider>
             </Grid>
             <Grid item xs={12} sm={12} md={12}>
+            <ThemeProvider theme={TextfieldTheme} >
               <TextField
-                className={classes.TextFieldStyle}
+              color="secondary"
                 id="description"
                 label="Notes"
                 fullWidth
                 multiline={true}
                 rows={3}
               />
+              </ThemeProvider>
             </Grid>
             <Grid item xs={12} sm={12} md={12}>
-              <Typography>Upload user profile image</Typography>
+              <ThemeProvider theme={TextfieldTheme}>
+              <Typography color="primary">Upload user profile image</Typography>
+              </ThemeProvider>
               <input
                 accept="image/*"
-                className={classes.input}
                 id="contained-button-file"
                 multiple
                 type="file"
@@ -151,7 +151,7 @@ export default function EditUser() {
             </Grid>
             <Grid item xs={12} sm={12} md={12}>
               <Typography align="right">
-                <Button variant="contained" className="btn-primary">
+                <Button size="small" className="btn-neutral-primary btn-hover">
                   Update User
                 </Button>
               </Typography>

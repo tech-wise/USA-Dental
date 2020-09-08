@@ -251,6 +251,7 @@ export default function ClaimsReport() {
                 noBottomColumns
                 responsive
                 order={['sr', 'asc']}
+                 
               />
             </Grid>
           </Grid>

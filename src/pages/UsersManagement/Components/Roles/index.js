@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   Grid,
@@ -13,7 +13,13 @@ import {
   Switch
 } from '@material-ui/core';
 import { MDBDataTable } from 'mdbreact';
-
+const SwitchTheme = createMuiTheme({
+  palette: {
+    secondary: {
+      main: "#21BFD9",
+    },
+  },
+});
 function AddRole() {
   let history = useHistory();
 
@@ -22,7 +28,7 @@ function AddRole() {
   }
 
   return (
-    <Button size="small" className="btn-neutral-primary" onClick={handleClick}>
+    <Button size="small" className="btn-neutral-primary btn-hover" onClick={handleClick}>
       <span className="btn-wrapper--icon">
         <FontAwesomeIcon icon={['fas', 'plus-circle']} />
       </span>
@@ -106,11 +112,13 @@ export default function Roles() {
         code: 'BODM',
         role: 'Back office delivery manager',
         status: (
+          <ThemeProvider theme={SwitchTheme}>
           <Switch
             checked={checked}
             onClick={toggle}
-            className="switch-small toggle-switch-line toggle-switch-info"
+            className="switch-small"
           />
+          </ThemeProvider>
         ),
         action: (
           <>
@@ -131,11 +139,13 @@ export default function Roles() {
         code: 'ACM',
         role: 'Accounting manager',
         status: (
+          <ThemeProvider theme={SwitchTheme}>
           <Switch
             checked={checked}
             onClick={toggle}
-            className="switch-small toggle-switch-line toggle-switch-info"
+            className="switch-small"
           />
+          </ThemeProvider>
         ),
         action: (
           <>
@@ -156,11 +166,13 @@ export default function Roles() {
         code: 'SCM',
         role: 'Scheduling Manager',
         status: (
+          <ThemeProvider theme={SwitchTheme}>
           <Switch
             checked={checked}
             onClick={toggle}
-            className="switch-small toggle-switch-line toggle-switch-info"
+            className="switch-small"
           />
+          </ThemeProvider>
         ),
         action: (
           <>
@@ -181,11 +193,13 @@ export default function Roles() {
         code: 'BIM',
         role: 'Billing Manager',
         status: (
+          <ThemeProvider theme={SwitchTheme}>
           <Switch
             checked={checked}
             onClick={toggle}
-            className="switch-small toggle-switch-line toggle-switch-info"
+            className="switch-small"
           />
+          </ThemeProvider>
         ),
         action: (
           <>
@@ -206,11 +220,13 @@ export default function Roles() {
         code: 'INM',
         role: 'Inventory Manager',
         status: (
+          <ThemeProvider theme={SwitchTheme}>
           <Switch
             checked={checked}
             onClick={toggle}
-            className="switch-small toggle-switch-line toggle-switch-info"
+            className="switch-small"
           />
+          </ThemeProvider>
         ),
         action: (
           <>
@@ -231,11 +247,13 @@ export default function Roles() {
         code: 'QCM',
         role: 'QC Manager',
         status: (
+          <ThemeProvider theme={SwitchTheme}>
           <Switch
             checked={checked}
             onClick={toggle}
-            className="switch-small toggle-switch-line toggle-switch-info"
+            className="switch-small"
           />
+          </ThemeProvider>
         ),
         action: (
           <>
@@ -256,11 +274,13 @@ export default function Roles() {
         code: 'QAM',
         role: 'QA Manager',
         status: (
+          <ThemeProvider theme={SwitchTheme}>
           <Switch
             checked={checked}
             onClick={toggle}
-            className="switch-small toggle-switch-line toggle-switch-info"
+            className="switch-small"
           />
+          </ThemeProvider>
         ),
         action: (
           <>
@@ -284,7 +304,7 @@ export default function Roles() {
       <Card className="card-box mb-spacing-6-x2">
         <div className="card-header">
           <div className="card-header--title">
-            <h4 className="font-size-lg mb-0 py-2 font-weight-bold">
+            <h4 className="font-size-lg mb-0 py-2 font-weight-bold color-pb">
               Manage Roles
             </h4>
           </div>

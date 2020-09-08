@@ -1,0 +1,35 @@
+.color-pb{
+    color :#253053;
+}
+.color-tqb{
+    color:#21BFD9;
+}
+.btn-hover:hover{
+    background-color:#253053 !important;
+}
+
+.pagination .page-item.active .page-link{background-color:#21BFD9 !important}
+.bs-select{
+  color:#253053;
+}
+input{
+    font-size:15px;
+}
+option.hoverColor-Theme{
+    padding:5px;
+    cursor: pointer;
+    color: #253053;   
+}
+option.hoverColor-Theme:hover{
+    background-color:#21BFD9;
+    color:white;
+}
+option.hoverColor-Theme:active{
+    background-color:#21BFD9;
+    color:white;
+}
+.bs-select .custom-select{
+    color:#21BFD9;
+    
+}
+ 

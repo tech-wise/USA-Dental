@@ -124,7 +124,7 @@ body {
 
     &.active,
     &:hover {
-      background: $value;
+      background:$value;
       color: color-yiq($value);
 
       .btn-wrapper--icon {

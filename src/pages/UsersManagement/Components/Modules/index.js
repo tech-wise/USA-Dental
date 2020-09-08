@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   Grid,
@@ -13,7 +13,13 @@ import {
   Switch
 } from '@material-ui/core';
 import { MDBDataTable } from 'mdbreact';
-
+const SwitchTheme = createMuiTheme({
+  palette: {
+    secondary: {
+      main: "#21BFD9",
+    },
+  },
+});
 function AddModule() {
   let history = useHistory();
 
@@ -22,11 +28,11 @@ function AddModule() {
   }
 
   return (
-    <Button size="small" className="btn-neutral-primary" onClick={handleClick}>
+    <Button size="small" className="btn-neutral-primary btn-hover" onClick={handleClick}>
       <span className="btn-wrapper--icon">
         <FontAwesomeIcon icon={['fas', 'plus-circle']} />
       </span>
-      <span className="btn-wrapper--label">Add Module</span>
+      <span className="btn-wrapper--label ">Add Module</span>
     </Button>
   );
 }
@@ -112,11 +118,13 @@ export default function AddNewUser() {
         module: 'Current Billing',
         slug: 'ABC',
         status: (
+          <ThemeProvider theme={SwitchTheme}>
           <Switch
             checked={checked}
             onClick={toggle}
-            className="switch-small toggle-switch-line toggle-switch-info"
+            className="switch-small"
           />
+          </ThemeProvider>
         ),
         action: (
           <>
@@ -138,11 +146,13 @@ export default function AddNewUser() {
         module: 'Office Management',
         slug: 'ABC',
         status: (
+          <ThemeProvider theme={SwitchTheme}>
           <Switch
             checked={checked}
             onClick={toggle}
-            className="switch-small toggle-switch-line toggle-switch-info"
+            className="switch-small"
           />
+          </ThemeProvider>
         ),
         action: (
           <>
@@ -164,11 +174,13 @@ export default function AddNewUser() {
         module: 'AR Management',
         slug: 'ABC',
         status: (
+          <ThemeProvider theme={SwitchTheme}>
           <Switch
             checked={checked}
             onClick={toggle}
-            className="switch-small toggle-switch-line toggle-switch-info"
+            className="switch-small"
           />
+          </ThemeProvider>
         ),
         action: (
           <>
@@ -190,11 +202,13 @@ export default function AddNewUser() {
         module: 'Scheduling Module',
         slug: 'ABC',
         status: (
+          <ThemeProvider theme={SwitchTheme}>
           <Switch
             checked={checked}
             onClick={toggle}
-            className="switch-small toggle-switch-line toggle-switch-info"
+            className="switch-small"
           />
+          </ThemeProvider>
         ),
         action: (
           <>
@@ -216,11 +230,13 @@ export default function AddNewUser() {
         module: 'Incentive Module',
         slug: 'ABC',
         status: (
+          <ThemeProvider theme={SwitchTheme}>
           <Switch
             checked={checked}
             onClick={toggle}
-            className="switch-small toggle-switch-line toggle-switch-info"
+            className="switch-small"
           />
+          </ThemeProvider>
         ),
         action: (
           <>
@@ -244,7 +260,7 @@ export default function AddNewUser() {
       <Card className="card-box mb-spacing-6-x2">
         <div className="card-header">
           <div className="card-header--title">
-            <h4 className="font-size-lg mb-0 py-2 font-weight-bold">
+            <h4 className="font-size-lg mb-0 py-2 font-weight-bold color-pb">
               Manage Modules
             </h4>
           </div>

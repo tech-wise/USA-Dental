@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 import UserDetailModal from '../UserDetailModal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PageviewIcon from '@material-ui/icons/Pageview';
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import {
   Grid,
   Card,
@@ -15,6 +16,15 @@ import {
 } from '@material-ui/core';
 import { MDBDataTable } from 'mdbreact';
 
+const SwitchTheme = createMuiTheme({
+  palette: {
+    secondary: {
+      main: "#21BFD9",
+    },
+  },
+});
+
+
 function AddUser() {
   let history = useHistory();
 
@@ -23,7 +33,7 @@ function AddUser() {
   }
 
   return (
-    <Button size="small" className="btn-neutral-primary" onClick={handleClick}>
+    <Button size="small" className="btn-neutral-primary btn-hover" onClick={handleClick}>
       <span className="btn-wrapper--icon">
         <FontAwesomeIcon icon={['fas', 'plus-circle']} />
       </span>
@@ -119,11 +129,13 @@ export default function AddNewUser() {
         rolecode: 'ACM',
         email: 'edinburgh@gmail.com',
         status: (
+          <ThemeProvider theme={SwitchTheme}>
           <Switch
             checked={checked}
             onClick={toggle}
-            className="switch-small toggle-switch-line toggle-switch-info"
+            className="switch-small"
           />
+          </ThemeProvider>
         ),
         action: (
           <>
@@ -150,11 +162,13 @@ export default function AddNewUser() {
         rolecode: 'WEBD',
         email: 'garrett@gmail.com',
         status: (
+          <ThemeProvider theme={SwitchTheme}>
           <Switch
             checked={checked}
             onClick={toggle}
-            className="switch-small toggle-switch-line toggle-switch-info"
+            className="switch-small"
           />
+          </ThemeProvider>
         ),
         action: (
           <>
@@ -181,11 +195,13 @@ export default function AddNewUser() {
         rolecode: 'Admin',
         email: 'ashton@gmail.com',
         status: (
+          <ThemeProvider theme={SwitchTheme}>
           <Switch
             checked={checked}
             onClick={toggle}
-            className="switch-small toggle-switch-line toggle-switch-info"
+            className="switch-small"
           />
+          </ThemeProvider>
         ),
         action: (
           <>
@@ -212,11 +228,13 @@ export default function AddNewUser() {
         rolecode: 'WEBD',
         email: 'cedric@gmail.com',
         status: (
+          <ThemeProvider theme={SwitchTheme}>
           <Switch
             checked={checked}
             onClick={toggle}
-            className="switch-small toggle-switch-line toggle-switch-info"
+            className="switch-small"
           />
+          </ThemeProvider>
         ),
         action: (
           <>
@@ -243,11 +261,13 @@ export default function AddNewUser() {
         rolecode: 'ACM',
         email: 'airi@gmail.com',
         status: (
+          <ThemeProvider theme={SwitchTheme}>
           <Switch
             checked={checked}
             onClick={toggle}
-            className="switch-small toggle-switch-line toggle-switch-info"
+            className="switch-small"
           />
+          </ThemeProvider>
         ),
         action: (
           <>
@@ -274,11 +294,13 @@ export default function AddNewUser() {
         rolecode: 'QCM',
         email: 'brielle@gmail.com',
         status: (
+          <ThemeProvider theme={SwitchTheme}>
           <Switch
             checked={checked}
             onClick={toggle}
-            className="switch-small toggle-switch-line toggle-switch-info"
+            className="switch-small"
           />
+          </ThemeProvider>
         ),
         action: (
           <>
@@ -305,11 +327,13 @@ export default function AddNewUser() {
         rolecode: 'ABC',
         email: 'herrod@gmail.com',
         status: (
+          <ThemeProvider theme={SwitchTheme}>
           <Switch
             checked={checked}
             onClick={toggle}
-            className="switch-small toggle-switch-line toggle-switch-info"
+            className="switch-small"
           />
+          </ThemeProvider>
         ),
         action: (
           <>
@@ -336,11 +360,13 @@ export default function AddNewUser() {
         rolecode: 'ADMIN',
         email: 'rhona@gmail.com',
         status: (
+          <ThemeProvider theme={SwitchTheme}>
           <Switch
             checked={checked}
             onClick={toggle}
-            className="switch-small toggle-switch-line toggle-switch-info"
+            className="switch-small"
           />
+          </ThemeProvider>
         ),
         action: (
           <>
@@ -369,7 +395,7 @@ export default function AddNewUser() {
       <Card className="card-box mb-spacing-6-x2">
         <div className="card-header">
           <div className="card-header--title">
-            <h4 className="font-size-lg mb-0 py-2 font-weight-bold">
+            <h4 className="font-size-lg mb-0 py-2 font-weight-bold color-pb">
               Manage Users
             </h4>
           </div>
@@ -383,6 +409,7 @@ export default function AddNewUser() {
         <CardContent className="px-0 pt-2 pb-3">
           <Grid container>
             <Grid item xs={12} sm={12} md={12} style={{ padding: '10px' }}>
+             
               <MDBDataTable
                 theadColor="transparent"
                 entriesOptions={[5, 20, 25]}
