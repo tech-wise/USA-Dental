@@ -370,7 +370,7 @@ export default function LivePreviewExample() {
                       <div className="text-black-50 text-uppercase pb-2 font-size-sm">
                         Accounts
                       </div>
-                      <h3 className="font-weight-bold display-4 mb-0 text-black">
+                      <h3 className="font-weight-bold display-5 mb-0 text-black">
                         <FontAwesomeIcon
                           icon={['fas', 'chevron-up']}
                           className="font-size-lg mr-2 text-success"
@@ -407,7 +407,7 @@ export default function LivePreviewExample() {
                       <div className="text-black-50 text-uppercase pb-2 font-size-sm">
                         Subscriptions
                       </div>
-                      <h3 className="font-weight-bold display-4 mb-0 text-black">
+                      <h3 className="font-weight-bold display-5 mb-0 text-black">
                         <span className="font-size-lg mr-2 text-success font-weight-bold">
                           +
                         </span>
@@ -535,7 +535,7 @@ export default function LivePreviewExample() {
                 </div>
               </div>
               <div className="px-5 pt-5 pb-2">
-                <h1 className="display-2 font-weight-bold mb-4">
+                <h1 className="display-4 font-weight-bold mb-4">
                   $
                   <span className="pl-1">
                     <CountUp

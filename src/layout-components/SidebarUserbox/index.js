@@ -120,7 +120,7 @@ const SidebarUserbox = () => {
         </div>
         <Button
           component={NavLink}
-          to="/PageProfile"
+          to="/Profile"
           size="small"
           className="btn-userbox">
           View profile

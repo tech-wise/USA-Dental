@@ -1,0 +1,270 @@
+[
+    {
+        "label": "First name",
+        "field": "firstname",
+        "checked":true
+       
+      },
+      {
+        "label": "Last name",
+        "field": "lastname",
+        "checked":true
+         
+      },
+      {
+        "label": "Chart number",
+        "field": "chartnumber",
+        "checked":false
+      },
+      {
+        "label": "Date of birth",
+        "field": "dob",
+        "checked":false
+      },
+      {
+        "label": "Date of service",
+        "field": "dos",
+        "checked":true
+      },
+      {
+        "label": "Insurance name",
+        "field": "insurancename",
+        "checked":true
+      },
+      {
+        "label": "Payor ID",
+        "field": "payorid",
+        "checked":false
+      },
+      {
+        "label": "Insurance tel",
+        "field": "insurancetel",
+        "checked":false
+         
+      },
+      {
+        "label": "Date sent",
+        "field": "datesent",
+        "checked":false
+         
+      },
+      {
+        "label": "Claim amount",
+        "field": "claimamount",
+        "checked":false
+         
+      },
+      {
+        "label": "Estimated amount",
+        "field": "estimatedamount",
+        "checked":false
+         
+      },
+      {
+        "label": "Estimated amount",
+        "field": "estimatedamount",
+        "checked":false
+         
+      },
+      {
+        "label": "Procedure codes",
+        "field": "procedurecodes",
+        "checked":true
+         
+      },
+      {
+        "label": "Procedure name",
+        "field": "procedurename",
+        "checked":false
+         
+      },
+      {
+        "label": "Caller comments",
+        "field": "callercomments",
+        "checked":false
+         
+      },
+      {
+        "label": "Caller status",
+        "field": "callerstatus",
+        "checked":false
+         
+      },
+      {
+        "label": "Biller comments",
+        "field": "billercomments",
+        "checked":false
+      },
+      {
+        "label": "Biller status",
+        "field": "billerstatus",
+        "checked":false
+         
+      },
+      {
+        "label": "Practice_Name",
+        "field": "Practice_Name",
+        "checked":false
+         
+      },
+      {
+        "label": "Chart",
+        "field": "Chart",
+        "checked":false
+         
+      },
+      {
+        "label": "Prov",
+        "field": "Prov ",
+        "checked":false
+         
+      },
+      {
+        "label": "Claim ID",
+        "field": "claimid",
+        "checked":false
+         
+      },
+      {
+        "label": "Claim Status",
+        "field": "claimstatus",
+        "checked":true
+         
+      },
+      {
+        "label": "Amount Paid",
+        "field": "amountpaid",
+        "checked":false
+         
+      },
+      {
+        "label": "PROVIDER_CONTRACT",
+        "field": "Provider",
+        "checked":false
+         
+      },
+      {
+        "label": "checkbox",
+        "field": "checkbox",
+        "checked":false
+         
+      }, {
+        "label": "Payor ID",
+        "field": "payorid",
+        "checked":false
+      },
+      {
+        "label": "Payer ID Code",
+        "field": "payeridcode",
+        "checked":false
+         
+      },
+      {
+        "label": "Payer Phone",
+        "field": "payerphone",
+        "checked":false
+         
+      },
+      {
+        "label": "Claim ID",
+        "field": "claimid",
+        "checked":false
+         
+      },
+      {
+        "label": "Claim Status",
+        "field": "claimstatus",
+        "checked":false
+         
+      },
+      {
+        "label": "Amount Paid",
+        "field": "amountpaid",
+        "checked":false
+         
+      },
+      {
+        "label": "Group Policy Number",
+        "field": "Group Policy Number",
+        "checked":false
+         
+      },
+      {
+        "label": "Group Name",
+        "field": "Group Name",
+        "checked":false
+         
+      },
+      {
+        "label": "Payer Name",
+        "field": "Payer Name",
+        "checked":false
+         
+      },
+      {
+        "label": "Caller Status ",
+        "field": "Caller Status",
+        "checked":false
+         
+      }, {
+        "label": "Biller Status",
+        "field": "billerstatus",
+        "checked":false
+      },
+      {
+        "label": "Last update User",
+        "field": "lastupdateuser",
+        "checked":false
+         
+      },
+      {
+        "label": "Match",
+        "field": "match",
+        "checked":false
+         
+      },
+      {
+        "label": "Written Off Amount",
+        "field": "writtenoffamount",
+        "checked":false
+         
+      },
+      {
+        "label": "Payment Posting Status",
+        "field": "paymentpostingstatus",
+        "checked":false
+         
+      },
+      {
+        "label": "EOB Date",
+        "field": "eobsate",
+        "checked":false
+         
+      },
+      {
+        "label": "Insurance Paid",
+        "field": "insurancepaid",
+        "checked":false
+         
+      },
+      {
+        "label": "Upload EOB",
+        "field": "uploadeob",
+        "checked":false
+         
+      },
+      {
+        "label": "Research Status",
+        "field": "researchstatus",
+        "checked":false
+         
+      },
+      {
+        "label": "Research Notes",
+        "field": "researchnotes",
+        "checked":false
+         
+      }
+
+      
+]

@@ -1,11 +1,13 @@
 .color-pb{
     color :#253053;
+    letter-spacing: 1px;
 }
 .color-tqb{
     color:#21BFD9;
 }
 .btn-hover:hover{
     background-color:#253053 !important;
+    color:white !important;
 }
 
 .pagination .page-item.active .page-link{background-color:#21BFD9 !important}
@@ -30,6 +32,48 @@ option.hoverColor-Theme:active{
 }
 .bs-select .custom-select{
     color:#21BFD9;
+   position: relative;
     
 }
- 
+.bs-select input{
+    color: #21BFD9;
+} 
+.MuiPagination-root .MuiPaginationItem-root.Mui-selected{
+    background-color:#21BFD9;
+}
+.MuiPagination-root .MuiPaginationItem-root.Mui-selected:hover{
+    background-color: #253053;
+    color: white;
+}
+.MuiSelect-selectMenu-369{
+    color: #21BFD9 !important;
+    height: 1em !important;   
+}
+.select-label{
+    color: #253053;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1rem;
+    margin-top: 1rem;
+    padding: 2px;
+}
+.MuiPaper-elevation4{
+    box-shadow: none !important;
+}
+.MuiTable-root tr th{
+     font-size: 1rem;
+    font-weight: bold;
+
+}
+.hoverColor-Theme:hover{
+    background-color: #21BFD9 !important;
+    color: white;
+}
+.Mui-selected{
+    background-color: #21BFD9 !important;
+    color:white !important;
+}
+.badge{
+    height: 25px;
+    line-height: 20px !important;
+}

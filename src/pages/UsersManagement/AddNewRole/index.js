@@ -26,6 +26,11 @@ const TextfieldTheme = createMuiTheme({
   }
 });
 const useStyles = makeStyles({
+  label:{
+    color:'#253053',
+    fontSize:'1.1rem',
+    fontWeight:500,
+  },
   root: {
     color: '#21BFD9',
     '&$checked': {
@@ -33,22 +38,6 @@ const useStyles = makeStyles({
     }
   },
   checked: {},
-  cardCategoryWhite: {
-    color: 'rgba(255,255,255,.62)',
-    margin: '0',
-    fontSize: '14px',
-    marginTop: '0',
-    marginBottom: '0'
-  },
-  cardTitleWhite: {
-    color: '#FFFFFF',
-    marginTop: '0px',
-    minHeight: 'auto',
-    fontWeight: '300',
-    fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
-    marginBottom: '3px',
-    textDecoration: 'none'
-  }
 });
 
 export default function AddNewRole() {
@@ -97,16 +86,15 @@ export default function AddNewRole() {
               <React.Fragment>
                 <Grid item xs={12} sm={12} md={12}>
                   <ThemeProvider theme={TextfieldTheme}>
-                    <Typography variant="h5" color="secondary">
-                      <b>
+                    <Typography color="secondary">
                       <FormControlLabel
-                      color="secondary"
+                      classes={{label:classes.label}}
+                       color="secondary"
                         control={
-                          <Switch className="switch-small" color="primary" />
+                          <Switch color="secondary" />
                         }
                         label={module.modulename}
                       />
-                      </b>
                     </Typography>
                   </ThemeProvider>
                 </Grid>
@@ -121,7 +109,6 @@ export default function AddNewRole() {
                         style={{ paddingLeft: '35px' }}>
                         <ThemeProvider theme={TextfieldTheme}>
                           <FormControlLabel
-                           
                             control={
                               <Checkbox
                                 name={access}
@@ -139,7 +126,7 @@ export default function AddNewRole() {
                     ))}
                   </Grid>
                 </Grid>
-                <div className="divider my-2" />
+                <div className="divider m-3"></div>
               </React.Fragment>
             ))}
 

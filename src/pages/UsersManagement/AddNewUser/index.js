@@ -2,17 +2,18 @@ import React from 'react';
 import Select from '@material-ui/core/Select';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
-import PhotoCamera from '@material-ui/icons/PhotoCamera';
 import { makeStyles } from '@material-ui/core/styles';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
-
+import Input from '@material-ui/core/Input';
+import MenuItem from '@material-ui/core/MenuItem';
 import {
   Card,
   CardContent,
   Typography,
   Grid,
   TextField,
-  Button
+  Button,
+  
 } from '@material-ui/core';
 
 const TextfieldTheme = createMuiTheme({
@@ -51,6 +52,11 @@ const useStyles = makeStyles({
 });
 
 export default function AddNewUser() {
+  const [personName, setPersonName] = React.useState([]);
+  const handleChange = (event) => {
+    setPersonName(event.target.value);
+  };
+  
   const classes = useStyles();
 
   return (
@@ -129,24 +135,45 @@ export default function AddNewUser() {
             <Grid item xs={12} sm={6} md={4}>
             <ThemeProvider theme={TextfieldTheme} >
               <FormControl className={classes.FormControlStyle} fullWidth>
-                <InputLabel htmlFor="age-native-simple" color="secondary">Role</InputLabel>
+                <InputLabel id="demo-mutiple-name-label" color="secondary">Role</InputLabel>
                 <Select
+                multiple
+                labelId="demo-mutiple-name-label"
+                value={personName}
+                onChange={handleChange}
+                id="demo-mutiple-name"
+                input={<Input />}
                 color="secondary"
-                  inputProps={{
-                    name: 'age',
-                    id: 'age-native-simple'
-                  }}>
-                  <option aria-label="None" value="" className="hoverColor-Theme"/>
-                  <option value="BODM" className="hoverColor-Theme">Back office delivery manager</option>
-                  <option value="SCHM" className="hoverColor-Theme">Scheduling Manager</option>
-                  <option value="ACCM" className="hoverColor-Theme">Accounting manager</option>
-                  <option value="INVM" className="hoverColor-Theme">Inventory Manager</option>
-                  <option value="QACM" className="hoverColor-Theme">QA and QC Manager</option>
+                  >
+                  <MenuItem aria-label="None" value="" className="hoverColor-Theme"/>
+                  <MenuItem value="BODM" className="hoverColor-Theme">Back office delivery manager</MenuItem>
+                  <MenuItem value="SCHM" className="hoverColor-Theme">Scheduling Manager</MenuItem>
+                  <MenuItem value="ACCM" className="hoverColor-Theme">Accounting manager</MenuItem>
+                  <MenuItem value="INVM" className="hoverColor-Theme">Inventory Manager</MenuItem>
+                  <MenuItem value="QACM" className="hoverColor-Theme">QA and QC Manager</MenuItem>
                 </Select>
               </FormControl>
               </ThemeProvider>
             </Grid>
-            <Grid item xs={12} sm={12} md={12}>
+            <Grid item xs={12} sm={6} md={4}>
+            <ThemeProvider theme={TextfieldTheme} >
+              <FormControl className={classes.FormControlStyle} fullWidth>
+                <InputLabel id="demo-mutiple-name-label" color="secondary">Clinic</InputLabel>
+                <Select
+                labelId="demo-mutiple-name-label"
+                id="demo-mutiple-name"
+                input={<Input />}
+                color="secondary"
+                  >
+                  <MenuItem aria-label="None" value="" className="hoverColor-Theme"/>
+                  <MenuItem value="UCS" className="hoverColor-Theme">Urgent care services</MenuItem>
+                  <MenuItem value="MHS" className="hoverColor-Theme">Mental health services</MenuItem>
+                  <MenuItem value="DS" className="hoverColor-Theme">Dental Service</MenuItem>
+                </Select>
+              </FormControl>
+              </ThemeProvider>
+            </Grid>
+            <Grid item xs={12} sm={12} md={8}>
             <ThemeProvider theme={TextfieldTheme} >
               <TextField
               color="secondary"
@@ -154,33 +181,8 @@ export default function AddNewUser() {
                 id="description"
                 label="Notes"
                 fullWidth
-                multiline={true}
-                rows={3}
               />
               </ThemeProvider>
-            </Grid>
-            <Grid item xs={12} sm={12} md={12}>
-              <ThemeProvider theme={TextfieldTheme}>
-              <Typography color="primary">Upload user profile image</Typography>
-              </ThemeProvider>
-              <input
-
-                accept="image/*"
-                className={classes.input}
-                id="contained-button-file"
-                multiple
-                type="file"
-                style={{ display: 'none' }}
-              />
-              <label htmlFor="contained-button-file">
-                <Button
-                  variant="contained"
-                  className="mt-1 btn-primary btn-gradient shadow-none btn-gradient-inverse bg-heavy-rain"
-                  component="span"
-                  startIcon={<PhotoCamera />}>
-                  Upload
-                </Button>
-              </label>
             </Grid>
             <Grid item xs={12} sm={12} md={12}>
               <Typography align="right">

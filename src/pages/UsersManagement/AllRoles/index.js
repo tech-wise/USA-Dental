@@ -1,13 +1,23 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-import { ExampleWrapperSeamless } from 'layout-components';
-import Roles from '../Components/Roles';
-export default function AllRoles() {
-  return (
-    <>
-      <ExampleWrapperSeamless>
-        <Roles />
-      </ExampleWrapperSeamless>
-    </>
-  );
+import Roles from './../Components/Roles';
+
+
+class AllRoles extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {};
+  }
+
+  render() {
+     return (
+      <>
+      <Roles />
+        {/*  */}
+      </>
+    );
+  }
 }
+
+export default AllRoles;

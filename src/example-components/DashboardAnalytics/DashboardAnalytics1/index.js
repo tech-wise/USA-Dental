@@ -16,7 +16,7 @@ export default function LivePreviewExample() {
                 </div>
                 <div className="text-black-50">Orders</div>
               </div>
-              <div className="display-3 text-center line-height-sm text-second text-center d-flex align-items-center pt-3 justify-content-center">
+              <div className="display-4 text-center line-height-sm text-second text-center d-flex align-items-center pt-3 justify-content-center">
                 <FontAwesomeIcon
                   icon={['fas', 'arrow-down']}
                   className="font-size-sm text-danger mr-2"
@@ -36,7 +36,7 @@ export default function LivePreviewExample() {
                 </div>
                 <div className="text-black-50">Reports</div>
               </div>
-              <div className="display-3 text-center line-height-sm text-second text-center d-flex align-items-center pt-3 justify-content-center">
+              <div className="display-4 text-center line-height-sm text-second text-center d-flex align-items-center pt-3 justify-content-center">
                 <FontAwesomeIcon
                   icon={['far', 'dot-circle']}
                   className="font-size-sm text-warning mr-2"
@@ -56,7 +56,7 @@ export default function LivePreviewExample() {
                 </div>
                 <div className="text-black-50">Customers</div>
               </div>
-              <div className="display-3 text-center line-height-sm text-second text-center d-flex align-items-center pt-3 justify-content-center">
+              <div className="display-4 text-center line-height-sm text-second text-center d-flex align-items-center pt-3 justify-content-center">
                 <FontAwesomeIcon
                   icon={['fas', 'arrow-up']}
                   className="font-size-sm text-success mr-2"
@@ -76,7 +76,7 @@ export default function LivePreviewExample() {
                 </div>
                 <div className="text-black-50">Sales</div>
               </div>
-              <div className="display-3 text-center line-height-sm text-second text-center d-flex align-items-center pt-3 justify-content-center">
+              <div className="display-4 text-center line-height-sm text-second text-center d-flex align-items-center pt-3 justify-content-center">
                 <FontAwesomeIcon
                   icon={['fas', 'arrow-down']}
                   className="font-size-sm text-first mr-2"

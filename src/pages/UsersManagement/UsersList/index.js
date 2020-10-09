@@ -1,13 +1,23 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-import { ExampleWrapperSeamless } from 'layout-components';
 import Users from './../Components/Users';
-export default function Tables() {
-  return (
-    <>
-      <ExampleWrapperSeamless>
-        <Users />
-      </ExampleWrapperSeamless>
-    </>
-  );
+
+
+class UsersList extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {};
+  }
+
+  render() {
+     return (
+      <>
+      <Users />
+        {/*  */}
+      </>
+    );
+  }
 }
+
+export default UsersList;

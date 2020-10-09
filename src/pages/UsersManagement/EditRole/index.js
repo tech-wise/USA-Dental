@@ -26,6 +26,11 @@ const TextfieldTheme = createMuiTheme({
   }
 });
 const useStyles = makeStyles({
+  label:{
+    color:'#253053',
+    fontSize:'1.1rem',
+    fontWeight:500,
+  },
   root: {
     color: '#21BFD9',
     '&$checked': {
@@ -33,23 +38,8 @@ const useStyles = makeStyles({
     }
   },
   checked: {},
-  cardCategoryWhite: {
-    color: 'rgba(255,255,255,.62)',
-    margin: '0',
-    fontSize: '14px',
-    marginTop: '0',
-    marginBottom: '0'
-  },
-  cardTitleWhite: {
-    color: '#FFFFFF',
-    marginTop: '0px',
-    minHeight: 'auto',
-    fontWeight: '300',
-    fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
-    marginBottom: '3px',
-    textDecoration: 'none'
-  }
 });
+
 
 export default function AddNewRole() {
   const classes = useStyles();
@@ -100,9 +90,10 @@ export default function AddNewRole() {
                     <Typography variant="h5" color="secondary">
                       <b>
                       <FormControlLabel
+                      classes={{label:classes.label}}
                       color="secondary"
                         control={
-                          <Switch className="switch-small" color="primary" />
+                          <Switch className="switch-small" color="secondary" />
                         }
                         label={module.modulename}
                       />
@@ -139,7 +130,7 @@ export default function AddNewRole() {
                     ))}
                   </Grid>
                 </Grid>
-                <div className="divider my-2" />
+                <div className="divider m-3"></div>
               </React.Fragment>
             ))}
 

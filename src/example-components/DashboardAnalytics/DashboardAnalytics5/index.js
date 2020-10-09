@@ -249,7 +249,7 @@ export default function LivePreviewExample() {
                 <Card className="card-box mb-spacing-6-x2">
                   <div className="card-header-alt px-4 pt-4 pb-0 d-flex align-items-start justify-content-between">
                     <div>
-                      <h3 className="font-weight-bold display-4 mb-0 text-black">
+                      <h3 className="font-weight-bold display-5 mb-0 text-black">
                         <CountUp
                           start={0}
                           end={895}
@@ -289,7 +289,7 @@ export default function LivePreviewExample() {
                 </Card>
                 <Card className="card-box bg-midnight-bloom">
                   <div className="card-header-alt px-4 pt-4 pb-0">
-                    <h3 className="font-weight-bold display-4 mb-0 text-white">
+                    <h3 className="font-weight-bold display-5 mb-0 text-white">
                       <CountUp
                         start={0}
                         end={586}
@@ -323,7 +323,7 @@ export default function LivePreviewExample() {
               <Grid item md={6}>
                 <Card className="card-box bg-danger mb-spacing-6-x2">
                   <div className="card-header-alt px-4 pt-4 pb-0">
-                    <h3 className="font-weight-bold display-4 mb-0 text-white">
+                    <h3 className="font-weight-bold display-5 mb-0 text-white">
                       <CountUp
                         start={0}
                         end={183.954}
@@ -355,7 +355,7 @@ export default function LivePreviewExample() {
                 </Card>
                 <Card className="card-box bg-night-sky">
                   <div className="card-header-alt px-4 pt-4 pb-0">
-                    <h3 className="font-weight-bold display-4 mb-0 text-white">
+                    <h3 className="font-weight-bold display-5 mb-0 text-white">
                       <CountUp
                         start={0}
                         end={13.253}

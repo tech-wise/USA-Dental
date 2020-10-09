@@ -6,7 +6,3 @@
 <br><br>
 <h6>$ &nbsp;&nbsp; npm install</h6>
 <h6>$ &nbsp;&nbsp; npm run</h6>
-<<<<<<< HEAD
-=======
-
->>>>>>> 2c5cba91dab5aac5bb354d24f115371d6e43608a

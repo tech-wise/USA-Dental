@@ -8,11 +8,9 @@ import {
   CardContent,
   Button,
   Dialog,
-  DialogActions,
-  DialogTitle,
   Switch
 } from '@material-ui/core';
-import { MDBDataTable } from 'mdbreact';
+import MUIDataTable from 'mui-datatables';
 const SwitchTheme = createMuiTheme({
   palette: {
     secondary: {
@@ -36,6 +34,51 @@ function AddRole() {
     </Button>
   );
 }
+function DeleteRole() {
+  const [deletemodal, setDeletemodal] = React.useState(false);
+  const DeleteClaim = () => setDeletemodal(!deletemodal);
+
+  return (
+    <>
+      <Button
+        onClick={DeleteClaim}
+        className="btn-neutral-danger mx-1 shadow-none d-30 border-0 p-0 d-inline-flex align-items-center justify-content-center">
+        <FontAwesomeIcon icon={['fas', 'trash']} className="font-size-sm" />
+      </Button>
+      <Dialog
+        open={deletemodal}
+        onClose={DeleteClaim}
+        classes={{ paper: 'shadow-lg rounded' }}>
+        <div className="text-center p-5">
+          <div className="avatar-icon-wrapper rounded-circle m-0">
+            <div className="d-inline-flex justify-content-center p-0 rounded-circle btn-icon avatar-icon-wrapper bg-neutral-danger text-danger m-0 d-130">
+              <FontAwesomeIcon
+                icon={['fas', 'times']}
+                className="d-flex align-self-center display-3"
+              />
+            </div>
+          </div>
+          <h4 className="font-weight-bold mt-4">
+            Are you sure you want to delete this entry?
+          </h4>
+          <p className="mb-0 font-size-lg text-muted">
+            You cannot undo this operation.
+          </p>
+          <div className="pt-4">
+            <Button
+              onClick={DeleteClaim}
+              className="btn-neutral-secondary btn-pill mx-1">
+              <span className="btn-wrapper--label">Cancel</span>
+            </Button>
+            <Button onClick={DeleteClaim} className="btn-danger btn-pill mx-1">
+              <span className="btn-wrapper--label">Delete</span>
+            </Button>
+          </div>
+        </div>
+      </Dialog>
+    </>
+  );
+}
 function EditRole() {
   let history = useHistory();
 
@@ -53,7 +96,6 @@ function EditRole() {
 }
 
 export default function Roles() {
-  const [open, setOpen] = React.useState(false);
   const [checked, setChecked] = useState();
 
   const toggle = () => {
@@ -64,240 +106,103 @@ export default function Roles() {
     }
   };
 
-  const handleClickOpen = () => {
-    setOpen(true);
+  const options = {
+    filterType: 'dropdown',
+    selectableRows: false,
+    rowsPerPage: 5,
+    rowsPerPageOptions: [5, 10, 50]
   };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
-  const [datatable] = React.useState({
-    columns: [
+   const columns= [
       {
         label: 'Id',
-        field: 'id',
-        sort: 'asc',
-        width: 150
+        name: 'id',
+         
       },
       {
         label: 'Short Code',
-        field: 'code',
-        width: 150,
-        attributes: {
-          'aria-controls': 'DataTable',
-          'aria-label': 'Name'
-        }
+        name: 'code',
+         
       },
       {
         label: 'Role',
-        field: 'role',
-        width: 100
+        name: 'role',
+         
       },
       {
         label: 'Status',
-        field: 'status',
-        sort: 'disabled',
-        width: 270
-      },
-      {
-        label: 'Actions',
-        field: 'action',
-        sort: 'disabled',
-        width: 100
-      }
-    ],
-    rows: [
-      {
-        id: 1,
-        code: 'BODM',
-        role: 'Back office delivery manager',
-        status: (
-          <ThemeProvider theme={SwitchTheme}>
+        name: 'status',
+        options: {
+          filter: false,
+          sort: false,
+          customBodyRender: (value, tableMeta, updateValue) => {
+            return (
+              <>
+              <ThemeProvider theme={SwitchTheme}>
           <Switch
             checked={checked}
             onClick={toggle}
             className="switch-small"
           />
           </ThemeProvider>
-        ),
-        action: (
-          <>
-            <EditRole />
-            <Button
-              onClick={handleClickOpen}
-              className="btn-neutral-danger mx-1 shadow-none d-30 border-0 p-0 d-inline-flex align-items-center justify-content-center">
-              <FontAwesomeIcon
-                icon={['fas', 'times']}
-                className="font-size-sm"
-              />
-            </Button>
-          </>
-        )
+              </>
+            );
+          }
+        }
+      },
+      {
+        label: 'Actions',
+        name: 'action',
+        options: {
+          filter: false,
+          sort: false,
+          customBodyRender: (value, tableMeta, updateValue) => {
+            return (
+              <>
+               <EditRole />
+               <DeleteRole />
+              </>
+            );
+          }
+        }
+      }
+    ];
+   const data = [
+      {
+        id: 1,
+        code: 'BODM',
+        role: 'Back office delivery manager',
       },
       {
         id: 2,
         code: 'ACM',
         role: 'Accounting manager',
-        status: (
-          <ThemeProvider theme={SwitchTheme}>
-          <Switch
-            checked={checked}
-            onClick={toggle}
-            className="switch-small"
-          />
-          </ThemeProvider>
-        ),
-        action: (
-          <>
-            <EditRole />
-            <Button
-              onClick={handleClickOpen}
-              className="btn-neutral-danger mx-1 shadow-none d-30 border-0 p-0 d-inline-flex align-items-center justify-content-center">
-              <FontAwesomeIcon
-                icon={['fas', 'times']}
-                className="font-size-sm"
-              />
-            </Button>
-          </>
-        )
       },
       {
         id: 3,
         code: 'SCM',
         role: 'Scheduling Manager',
-        status: (
-          <ThemeProvider theme={SwitchTheme}>
-          <Switch
-            checked={checked}
-            onClick={toggle}
-            className="switch-small"
-          />
-          </ThemeProvider>
-        ),
-        action: (
-          <>
-            <EditRole />
-            <Button
-              onClick={handleClickOpen}
-              className="btn-neutral-danger mx-1 shadow-none d-30 border-0 p-0 d-inline-flex align-items-center justify-content-center">
-              <FontAwesomeIcon
-                icon={['fas', 'times']}
-                className="font-size-sm"
-              />
-            </Button>
-          </>
-        )
       },
       {
         id: 4,
         code: 'BIM',
         role: 'Billing Manager',
-        status: (
-          <ThemeProvider theme={SwitchTheme}>
-          <Switch
-            checked={checked}
-            onClick={toggle}
-            className="switch-small"
-          />
-          </ThemeProvider>
-        ),
-        action: (
-          <>
-            <EditRole />
-            <Button
-              onClick={handleClickOpen}
-              className="btn-neutral-danger mx-1 shadow-none d-30 border-0 p-0 d-inline-flex align-items-center justify-content-center">
-              <FontAwesomeIcon
-                icon={['fas', 'times']}
-                className="font-size-sm"
-              />
-            </Button>
-          </>
-        )
       },
       {
         id: 5,
         code: 'INM',
         role: 'Inventory Manager',
-        status: (
-          <ThemeProvider theme={SwitchTheme}>
-          <Switch
-            checked={checked}
-            onClick={toggle}
-            className="switch-small"
-          />
-          </ThemeProvider>
-        ),
-        action: (
-          <>
-            <EditRole />
-            <Button
-              onClick={handleClickOpen}
-              className="btn-neutral-danger mx-1 shadow-none d-30 border-0 p-0 d-inline-flex align-items-center justify-content-center">
-              <FontAwesomeIcon
-                icon={['fas', 'times']}
-                className="font-size-sm"
-              />
-            </Button>
-          </>
-        )
       },
       {
         id: 6,
         code: 'QCM',
         role: 'QC Manager',
-        status: (
-          <ThemeProvider theme={SwitchTheme}>
-          <Switch
-            checked={checked}
-            onClick={toggle}
-            className="switch-small"
-          />
-          </ThemeProvider>
-        ),
-        action: (
-          <>
-            <EditRole />
-            <Button
-              onClick={handleClickOpen}
-              className="btn-neutral-danger mx-1 shadow-none d-30 border-0 p-0 d-inline-flex align-items-center justify-content-center">
-              <FontAwesomeIcon
-                icon={['fas', 'times']}
-                className="font-size-sm"
-              />
-            </Button>
-          </>
-        )
       },
       {
         id: 7,
         code: 'QAM',
         role: 'QA Manager',
-        status: (
-          <ThemeProvider theme={SwitchTheme}>
-          <Switch
-            checked={checked}
-            onClick={toggle}
-            className="switch-small"
-          />
-          </ThemeProvider>
-        ),
-        action: (
-          <>
-            <EditRole />
-            <Button
-              onClick={handleClickOpen}
-              className="btn-neutral-danger mx-1 shadow-none d-30 border-0 p-0 d-inline-flex align-items-center justify-content-center">
-              <FontAwesomeIcon
-                icon={['fas', 'times']}
-                className="font-size-sm"
-              />
-            </Button>
-          </>
-        )
       }
-    ]
-  });
+    ];
 
   return (
     <>
@@ -318,45 +223,17 @@ export default function Roles() {
         <CardContent className="px-0 pt-2 pb-3">
           <Grid container>
             <Grid item xs={12} sm={12} md={12} style={{ padding: '10px' }}>
-              <MDBDataTable
-                theadColor="transparent"
-                entriesOptions={[5, 20, 25]}
-                entries={5}
-                pagesAmount={4}
-                data={datatable}
-                materialSearch
-                noBottomColumns
-                responsive
-                order={['id', 'asc']}
-              />
+            <MUIDataTable
+                  data={data}
+                  columns={columns}
+                  options={options}
+                   
+                />
             </Grid>
           </Grid>
         </CardContent>
       </Card>
       {/* Dialoge */}
-      <Dialog
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="alert-dialog-title"
-        aria-describedby="alert-dialog-description">
-        <DialogTitle id="alert-dialog-title">
-          {'Are you sure you want to delete this Record?'}
-        </DialogTitle>
-        <DialogActions>
-          <Button
-            variant="contained"
-            className="btn-pill m-2 btn-warning"
-            onClick={handleClose}>
-            Agree
-          </Button>
-          <Button
-            variant="contained"
-            className="btn-pill m-2 btn-danger"
-            onClick={handleClose}>
-            Cancel
-          </Button>
-        </DialogActions>
-      </Dialog>
     </>
   );
 }

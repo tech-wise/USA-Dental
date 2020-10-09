@@ -167,7 +167,7 @@ export default function LivePreviewExample() {
     <>
       <Card className="card-box mb-spacing-6-x2">
         <Grid container spacing={0}>
-          <Grid item xl={5}>
+          <Grid item lg={5}>
             <div className="hero-wrapper bg-composed-wrapper bg-sunrise-purple h-100 rounded br-xl-right-0">
               <div className="flex-grow-1 w-100 d-flex align-items-center">
                 <div
@@ -175,7 +175,7 @@ export default function LivePreviewExample() {
                   style={{ backgroundImage: 'url(' + hero2 + ')' }}
                 />
                 <div className="bg-composed-wrapper--bg bg-second opacity-5 rounded br-xl-right-0" />
-                <div className="bg-composed-wrapper--content p-5">
+                <div className="bg-composed-wrapper--content p-3">
                   <div className="align-self-center px-4">
                     <div className="py-3">
                       <Card className="card-box shadow-lg border-success card-box-border-bottom rounded hover-scale-sm">
@@ -191,7 +191,7 @@ export default function LivePreviewExample() {
                           </Button>
                         </div>
                         <div className="p-4 text-left">
-                          <div className="display-3 text-success font-weight-bold">
+                          <div className=" text-success font-weight-bold">
                             $33,485
                           </div>
                           <div className="font-size-xxl font-weight-bold text-black">
@@ -222,7 +222,7 @@ export default function LivePreviewExample() {
                           </Button>
                         </div>
                         <div className="p-4 text-left">
-                          <div className="display-3 text-danger font-weight-bold">
+                          <div className="text-danger font-weight-bold">
                             $71,684
                           </div>
                           <div className="font-size-xxl font-weight-bold text-black">
@@ -244,7 +244,7 @@ export default function LivePreviewExample() {
               </div>
             </div>
           </Grid>
-          <Grid item xl={7}>
+          <Grid item lg={7}>
             <div className="p-4">
               <div className="p-2">
                 <h6 className="font-weight-bold font-size-xl mb-1 text-black">

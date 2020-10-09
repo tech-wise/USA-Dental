@@ -1,13 +1,23 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-import { ExampleWrapperSeamless } from 'layout-components';
-import Modules from '../Components/Modules';
-export default function AllModules() {
-  return (
-    <>
-      <ExampleWrapperSeamless>
-        <Modules />
-      </ExampleWrapperSeamless>
-    </>
-  );
+import Modules from './../Components/Modules';
+
+
+class AllModules extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {};
+  }
+
+  render() {
+     return (
+      <>
+      <Modules />
+        {/*  */}
+      </>
+    );
+  }
 }
+
+export default AllModules;

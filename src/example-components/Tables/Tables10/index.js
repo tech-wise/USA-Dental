@@ -20,7 +20,7 @@ export default function LivePreviewExample() {
         </div>
         <div className="divider" />
         <CardContent className="pt-2 px-4 pb-4">
-          <Table className="table table-borderless table-hover table-alternate text-nowrap mb-0">
+          <Table className="table table-alternate text-nowrap mb-0">
             <thead>
               <tr>
                 <th>Software</th>

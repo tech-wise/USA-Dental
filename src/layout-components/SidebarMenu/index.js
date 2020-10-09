@@ -23,18 +23,12 @@ import BusinessIcon from '@material-ui/icons/Business';
 import LocalAtmIcon from '@material-ui/icons/LocalAtm';
 import AssignmentIcon from '@material-ui/icons/Assignment';
 import CallToActionIcon from '@material-ui/icons/CallToAction';
-
-
+import LocalHospitalIcon from '@material-ui/icons/LocalHospital';
 const SidebarMenu = (props) => {
   const { setSidebarToggleMobile, sidebarUserbox } = props;
 
   const toggleSidebarMobile = () => setSidebarToggleMobile(false);
 
-  const [dashboardOpen, setDashboardOpen] = useState(false);
-  const toggleDashboard = (event) => {
-    setDashboardOpen(!dashboardOpen);
-    event.preventDefault();
-  };
   const [applicationOpen, setApplicationOpen] = useState(false);
   const toggleApplication = (event) => {
     setApplicationOpen(!applicationOpen);
@@ -50,6 +44,11 @@ const SidebarMenu = (props) => {
     setRoleOpen(!roleOpen);
     event.preventDefault();
   };
+  const [clinicOpen, setClinicOpen] = useState(false);
+  const toggleClinic = (event) => {
+    setClinicOpen(!clinicOpen);
+    event.preventDefault();
+  };
 
   const [currentbillingOpen, setCurrentbillingOpen] = useState(false);
   const toggleBilling = (event) => {
@@ -59,6 +58,21 @@ const SidebarMenu = (props) => {
   const [armanagementOpen, setArmanagementOpen] = useState(false);
   const toggleArmanagement = (event) => {
     setArmanagementOpen(!armanagementOpen);
+    event.preventDefault();
+  };
+  const [paymentpostingOpen, setPaymentpostingOpen] = useState(false);
+  const togglePaymentposting = (event) => {
+    setPaymentpostingOpen(!paymentpostingOpen);
+    event.preventDefault();
+  };
+  const [ppoOpen, setPpoOpen] = useState(false);
+  const toggleppo = (event) => {
+    setPpoOpen(!ppoOpen);
+    event.preventDefault();
+  };
+  const [activityreportOpen, setactivityOpen] = useState(false);
+  const toggleactivity = (event) => {
+    setactivityOpen(!activityreportOpen);
     event.preventDefault();
   };
   const [schedulingmoduleOpen, setSchedulingmoduleOpen] = useState(false);
@@ -95,50 +109,12 @@ const SidebarMenu = (props) => {
           <div className="sidebar-header"></div>
           <ul>
             <li>
-              <a
-                href="#/"
-                onClick={toggleDashboard}
-                className={clsx({ active: dashboardOpen })}>
+              <NavLink onClick={toggleSidebarMobile} to="/DashboardAnalytics">
                 <span className="sidebar-icon">
                   <VerifiedUserTwoToneIcon />
                 </span>
-                <span className="sidebar-item-label">Dashboards</span>
-                <span className="sidebar-icon-indicator">
-                  <ChevronRightTwoToneIcon />
-                </span>
-              </a>
-              <Collapse in={dashboardOpen}>
-                <ul>
-                  <li>
-                    <NavLink
-                      onClick={toggleSidebarMobile}
-                      to="/DashboardMonitoring">
-                      Monitoring
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink
-                      onClick={toggleSidebarMobile}
-                      to="/DashboardCommerce">
-                      Commerce
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink
-                      onClick={toggleSidebarMobile}
-                      to="/DashboardAnalytics">
-                      Analytics
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink
-                      onClick={toggleSidebarMobile}
-                      to="/DashboardStatistics">
-                      Statistics
-                    </NavLink>
-                  </li>
-                </ul>
-              </Collapse>
+                <span className="sidebar-item-label">Dashboard</span>
+              </NavLink>
             </li>
             <div className="sidebar-header">
               <span>Users Management</span>
@@ -230,6 +206,41 @@ const SidebarMenu = (props) => {
               </Collapse>
             </li>
             <div className="sidebar-header">
+              <span>Clinic Module</span>
+            </div>
+            <li>
+              <a
+                href="#/"
+                onClick={toggleClinic}
+                className={clsx({ active: clinicOpen })}>
+                <span className="sidebar-icon">
+                  <LocalHospitalIcon />
+                </span>
+                <span className="sidebar-item-label">Manage Clinics</span>
+                <span className="sidebar-icon-indicator">
+                  <ChevronRightTwoToneIcon />
+                </span>
+              </a>
+              <Collapse in={clinicOpen}>
+                <ul>
+                  <li>
+                    <NavLink
+                      onClick={toggleSidebarMobile}
+                      to="/AllClinics">
+                      All Clinics
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      onClick={toggleSidebarMobile}
+                      to="/AddNewClinic">
+                      Add New Clicic
+                    </NavLink>
+                  </li>
+                </ul>
+              </Collapse>
+            </li>
+            <div className="sidebar-header">
               <span>RCM Module</span>
             </div>
             <li>
@@ -280,19 +291,167 @@ const SidebarMenu = (props) => {
               <Collapse in={armanagementOpen}>
                 <ul>
                   <li>
-                    <NavLink onClick={toggleSidebarMobile} to="/">
-                      Example 1
+                    <NavLink onClick={toggleSidebarMobile} to="/ARDashboard">
+                      Dashboard
                     </NavLink>
                   </li>
                   <li>
-                    <NavLink onClick={toggleSidebarMobile} to="/">
-                      Example 2
+                    <NavLink onClick={toggleSidebarMobile} to="/Rcmreport">
+                      RCM Report
                     </NavLink>
                   </li>
+
                   <li>
-                    <NavLink onClick={toggleSidebarMobile} to="/">
-                      Example 3
-                    </NavLink>
+                    <a
+                      href="#/"
+                      onClick={toggleactivity}
+                      className={clsx({ active: activityreportOpen })}>
+                      {/* <span className="sidebar-icon">
+                  <AssessmentIcon />
+                </span> */}
+                      <span className="sidebar-item-label">
+                        Activity Report
+                      </span>
+                      <span className="sidebar-icon-indicator">
+                        <ChevronRightTwoToneIcon />
+                      </span>
+                    </a>
+                    <Collapse in={activityreportOpen}>
+                      <ul>
+                        <li>
+                          <NavLink
+                            onClick={toggleSidebarMobile}
+                            to="/RcmActivityDashboard">
+                            Activity Reports
+                          </NavLink>
+                        </li>
+                        <li>
+                          <NavLink
+                            onClick={toggleSidebarMobile}
+                            to="/RcmActivityWorkedonDashboard">
+                            Worked on Dashboard
+                          </NavLink>
+                        </li>
+                        <li>
+                          <NavLink
+                            onClick={toggleSidebarMobile}
+                            to="/RcmActivityTotalClaims">
+                            Total Claims
+                          </NavLink>
+                        </li>
+                        <li>
+                          <NavLink
+                            onClick={toggleSidebarMobile}
+                            to="/RcmActivityCalledClaimsRerun">
+                            Called Claims Rerun
+                          </NavLink>
+                        </li>
+                        <li>
+                          <NavLink
+                            onClick={toggleSidebarMobile}
+                            to="/RcmActivityCalledClaimsOthers">
+                            Called Claims Others
+                          </NavLink>
+                        </li>
+                      </ul>
+                    </Collapse>
+                  </li>
+
+                  <li>
+                    <a
+                      href="#/"
+                      onClick={togglePaymentposting}
+                      className={clsx({ active: paymentpostingOpen })}>
+                      {/* <span className="sidebar-icon">
+                  <AssessmentIcon />
+                </span> */}
+                      <span className="sidebar-item-label">
+                        Payment Posting
+                      </span>
+                      <span className="sidebar-icon-indicator">
+                        <ChevronRightTwoToneIcon />
+                      </span>
+                    </a>
+                    <Collapse in={paymentpostingOpen}>
+                      <ul>
+                        <li>
+                          <NavLink
+                            onClick={toggleSidebarMobile}
+                            to="/AllClaimsView">
+                            All Claims View
+                          </NavLink>
+                        </li>
+                        <li>
+                          <NavLink
+                            onClick={toggleSidebarMobile}
+                            to="/Writtenoff">
+                            Written Off
+                          </NavLink>
+                        </li>
+                        <li>
+                          <NavLink onClick={toggleSidebarMobile} to="/Medicaid">
+                            Medicaid
+                          </NavLink>
+                        </li>
+                        <li>
+                          <NavLink
+                            onClick={toggleSidebarMobile}
+                            to="/PaidNotPosted">
+                            Paid Not Posted
+                          </NavLink>
+                        </li>
+                        <li>
+                          <NavLink
+                            onClick={toggleSidebarMobile}
+                            to="/InclusiveCodeDifference">
+                            Inclusive Code Difference
+                          </NavLink>
+                        </li>
+                        <li>
+                          <NavLink
+                            onClick={toggleSidebarMobile}
+                            to="/ResubmittedbyBiller">
+                            Resubmitted by Biller
+                          </NavLink>
+                        </li>
+                      </ul>
+                    </Collapse>
+                  </li>
+                  <li>
+                    <a
+                      href="#/"
+                      onClick={toggleppo}
+                      className={clsx({ active: ppoOpen })}>
+                      <span className="sidebar-item-label">PPO</span>
+                      <span className="sidebar-icon-indicator">
+                        <ChevronRightTwoToneIcon />
+                      </span>
+                    </a>
+                    <Collapse in={ppoOpen}>
+                      <ul>
+                        <li>
+                          <NavLink
+                            onClick={toggleSidebarMobile}
+                            to="/PPO30NotWork">
+                            PPO 30 Called Not Worked
+                          </NavLink>
+                        </li>
+                        <li>
+                          <NavLink
+                            onClick={toggleSidebarMobile}
+                            to="/PPO60NotWork">
+                            PPO 60 Called Not Worked
+                          </NavLink>
+                        </li>
+                        <li>
+                          <NavLink
+                            onClick={toggleSidebarMobile}
+                            to="/PPO90NotWork">
+                            PPO 90 Called Not Worked
+                          </NavLink>
+                        </li>
+                      </ul>
+                    </Collapse>
                   </li>
                 </ul>
               </Collapse>
@@ -316,18 +475,22 @@ const SidebarMenu = (props) => {
               <Collapse in={schedulingmoduleOpen}>
                 <ul>
                   <li>
-                    <NavLink onClick={toggleSidebarMobile} to="/">
-                      Example 1
+                    <NavLink onClick={toggleSidebarMobile} to="/DailyScheduled">
+                      Daily Scheduler Report
                     </NavLink>
                   </li>
                   <li>
-                    <NavLink onClick={toggleSidebarMobile} to="/">
-                      Example 2
+                    <NavLink
+                      onClick={toggleSidebarMobile}
+                      to="/RecallnoSchedule">
+                      Recall Patient Report
                     </NavLink>
                   </li>
                   <li>
-                    <NavLink onClick={toggleSidebarMobile} to="/">
-                      Example 3
+                    <NavLink
+                      onClick={toggleSidebarMobile}
+                      to="/TreatmentReport">
+                      Unscheduled Treatment Report
                     </NavLink>
                   </li>
                 </ul>
@@ -349,18 +512,15 @@ const SidebarMenu = (props) => {
               <Collapse in={incentivemoduleOpen}>
                 <ul>
                   <li>
-                    <NavLink onClick={toggleSidebarMobile} to="/">
-                      Example 1
+                    <NavLink
+                      onClick={toggleSidebarMobile}
+                      to="/DailyIncentiveReport">
+                      Daily Incentive Report
                     </NavLink>
                   </li>
                   <li>
-                    <NavLink onClick={toggleSidebarMobile} to="/">
-                      Example 2
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink onClick={toggleSidebarMobile} to="/">
-                      Example 3
+                    <NavLink onClick={toggleSidebarMobile} to="/QCReport">
+                      Daily QC Tool Report
                     </NavLink>
                   </li>
                 </ul>
@@ -382,18 +542,25 @@ const SidebarMenu = (props) => {
               <Collapse in={officemanagementOpen}>
                 <ul>
                   <li>
-                    <NavLink onClick={toggleSidebarMobile} to="/">
-                      Example 1
+                    <NavLink onClick={toggleSidebarMobile} to="/Snippets">
+                      Production and Collection
                     </NavLink>
                   </li>
                   <li>
-                    <NavLink onClick={toggleSidebarMobile} to="/">
-                      Example 2
+                    <NavLink
+                      onClick={toggleSidebarMobile}
+                      to="/ProviderCollections">
+                      provider production and collection
                     </NavLink>
                   </li>
                   <li>
-                    <NavLink onClick={toggleSidebarMobile} to="/">
-                      Example 3
+                    <NavLink onClick={toggleSidebarMobile} to="/Documents">
+                      Document Center (Scanned docs)
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink onClick={toggleSidebarMobile} to="/BridgeDoc">
+                      E-Bridge
                     </NavLink>
                   </li>
                 </ul>
@@ -415,18 +582,36 @@ const SidebarMenu = (props) => {
               <Collapse in={accountingOpen}>
                 <ul>
                   <li>
-                    <NavLink onClick={toggleSidebarMobile} to="/">
-                      Example 1
+                    <NavLink
+                      onClick={toggleSidebarMobile}
+                      to="/AccountingDashboard">
+                      Dashboard
                     </NavLink>
                   </li>
                   <li>
-                    <NavLink onClick={toggleSidebarMobile} to="/">
-                      Example 2
+                    <NavLink
+                      onClick={toggleSidebarMobile}
+                      to="/ReconciliationReport">
+                      Reconciliation Report
                     </NavLink>
                   </li>
                   <li>
-                    <NavLink onClick={toggleSidebarMobile} to="/">
-                      Example 3
+                    <NavLink onClick={toggleSidebarMobile} to="/AccountChecks">
+                      Check Deposit
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      onClick={toggleSidebarMobile}
+                      to="/AccountsPayrole">
+                      Payments
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      onClick={toggleSidebarMobile}
+                      to="/AccountExpenses">
+                      Expenses
                     </NavLink>
                   </li>
                 </ul>
@@ -450,18 +635,18 @@ const SidebarMenu = (props) => {
               <Collapse in={evbbOpen}>
                 <ul>
                   <li>
-                    <NavLink onClick={toggleSidebarMobile} to="/">
-                      Example 1
+                    <NavLink onClick={toggleSidebarMobile} to="/EV48Hours">
+                      EV Performed 48 hours
                     </NavLink>
                   </li>
                   <li>
-                    <NavLink onClick={toggleSidebarMobile} to="/">
-                      Example 2
+                    <NavLink onClick={toggleSidebarMobile} to="/EVonEmergency">
+                      EV`s Performed on Emergency
                     </NavLink>
                   </li>
                   <li>
-                    <NavLink onClick={toggleSidebarMobile} to="/">
-                      Example 3
+                    <NavLink onClick={toggleSidebarMobile} to="/EVnotPerformed">
+                      EV`s Not Performed
                     </NavLink>
                   </li>
                 </ul>
