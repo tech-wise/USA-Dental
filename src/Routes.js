@@ -9,14 +9,11 @@ import MuiTheme from './theme';
 
 // Layout Blueprints
 
-import { LeftSidebar, CollapsedSidebar } from './layout-blueprints';
+import { LeftSidebar } from './layout-blueprints';
 
 // Example Pages
 import Login from './pages/Login';
-import DashboardMonitoring from './example-pages/DashboardMonitoring';
 import DashboardCommerce from './example-pages/DashboardCommerce';
-import DashboardAnalytics from './example-pages/DashboardAnalytics';
-import DashboardStatistics from './example-pages/DashboardStatistics';
 import UsersList from './pages/UsersManagement/UsersList';
 import AddNewUser from './pages/UsersManagement/AddNewUser';
 import EditUser from './pages/UsersManagement/EditUser';
@@ -108,14 +105,9 @@ import ViewUser from './pages/UsersManagement/ViewUser';
 import AllClinic from './pages/ClinicManagement/AllClinic';
 import AddNewClinic from './pages/ClinicManagement/AddNewClinic';
 import EditClinic from './pages/ClinicManagement/EditClinic';
-const PageCalendar = lazy(() => import('./example-pages/PageCalendar'));
-const PageChat = lazy(() => import('./example-pages/PageChat'));
-const PageProjects = lazy(() => import('./example-pages/PageProjects'));
-const PageFileManager = lazy(() => import('./example-pages/PageFileManager'));
 const PageAuthModals = lazy(() => import('./example-pages/PageAuthModals'));
 const Tables = lazy(() => import('./example-pages/Tables'));
 const Maps = lazy(() => import('./example-pages/Maps'));
-const PageProfile = lazy(() => import('./example-pages/PageProfile'));
 const PageInvoice = lazy(() => import('./example-pages/PageInvoice'));
 const Routes = () => {
   const location = useLocation();
@@ -184,10 +176,7 @@ const Routes = () => {
             <Route
               path={[
                 '/Profile',
-                '/DashboardMonitoring',
                 '/DashboardCommerce',
-                '/DashboardAnalytics',
-                '/DashboardStatistics',
                 '/AllUsers',
                 '/AddNewUser',
                 '/EditUser',
@@ -296,21 +285,9 @@ const Routes = () => {
                       path="/Profile"
                       component={Profile}
                     />
-                     <Route
-                      path="/DashboardMonitoring"
-                      component={DashboardMonitoring}
-                    />
                     <Route
                       path="/DashboardCommerce"
                       component={DashboardCommerce}
-                    />
-                    <Route
-                      path="/DashboardAnalytics"
-                      component={DashboardAnalytics}
-                    />
-                    <Route
-                      path="/DashboardStatistics"
-                      component={DashboardStatistics}
                     />
                     <Route path="/AllUsers" component={UsersList} />
                     <Route path="/AddNewUser" component={AddNewUser} />
@@ -488,34 +465,6 @@ const Routes = () => {
                   </motion.div>
                 </Switch>
               </LeftSidebar>
-            </Route>
-            <Route
-              path={[
-                '/PageCalendar',
-                '/PageChat',
-                '/PageProjects',
-                '/PageFileManager',
-                '/PageProfile'
-              ]}>
-              <CollapsedSidebar>
-                <Switch location={location} key={location.pathname}>
-                  <motion.div
-                    initial="initial"
-                    animate="in"
-                    exit="out"
-                    variants={pageVariants}
-                    transition={pageTransition}>
-                    <Route path="/PageCalendar" component={PageCalendar} />
-                    <Route path="/PageChat" component={PageChat} />
-                    <Route path="/PageProjects" component={PageProjects} />
-                    <Route
-                      path="/PageFileManager"
-                      component={PageFileManager}
-                    />
-                    <Route path="/PageProfile" component={PageProfile} />
-                  </motion.div>
-                </Switch>
-              </CollapsedSidebar>
             </Route>
           </Switch>
         </Suspense>

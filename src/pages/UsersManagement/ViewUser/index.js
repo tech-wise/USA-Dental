@@ -54,13 +54,13 @@ export default function ViewUser() {
                   </h4>
                   <div className="text-center my-4">
                     <div className="badge badge-pill badge-first mx-1">
-                      Web developer
+                      Front Desk
                     </div>
                     <div className="badge badge-pill badge-warning text-warning mx-1">
-                      Javascript
+                      Accountant
                     </div>
                     <div className="badge badge-pill badge-danger text-danger mx-1">
-                      Angular
+                      Biller
                     </div>
                   </div>
 

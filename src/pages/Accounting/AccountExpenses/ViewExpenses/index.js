@@ -92,26 +92,6 @@ export default function ViewExpenses() {
                    <span className="font-weight-bold color-pb">Total &nbsp; $11000.00</span>
                   </TableCell>
                 </TableRow>
-                {/* ---
-                <TableRow>
-                  <TableCell
-
-                    component="th"
-                    scope="row"
-                    className={classes.heading}>
-                    Notes
-                  </TableCell>
-                  <TableCell colSpan={3}>
-                    Caller Name: AI / Date: 08-28-2020 DOS 06-22-2020. Claim #
-                    0081394333 99. Billed amount $219.00. Paid amount $367.00.
-                    -Payment was made through check # 546519588 issued on
-                    08-17-2020. Check was paid to provider on address 5819 South
-                    Highway 6 Suite 210, Missouri City, TX 77459 . -Patient’s
-                    total responsibility per EOB is $00.00 -Insurance
-                    collectible is $00.00 -Claim is on eBridge – (FBPD batch
-                    8-25-2020-(3)Page#:29,31) -Posted on sent date 08-27-2020
-                  </TableCell>
-                </TableRow> */}
               </TableBody>
             </Table>
           </TableContainer>
