@@ -77,3 +77,6 @@ option.hoverColor-Theme:active{
     height: 25px;
     line-height: 20px !important;
 }
+.MuiToolbar-root .MuiSvgIcon-root{
+    color: #21BFD9;
+}
