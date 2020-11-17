@@ -1,6 +1,6 @@
 import React from 'react';
-import { Button, Card, CardContent} from '@material-ui/core';
-import {useHistory} from 'react-router-dom';
+import { Button, Card, CardContent } from '@material-ui/core';
+import { useHistory } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PageviewIcon from '@material-ui/icons/Pageview';
 import MUIDataTable from 'mui-datatables';
@@ -30,16 +30,31 @@ function Task() {
   );
 }
 
+function VersionHistory() {
+  let history = useHistory();
 
+  function handleClick() {
+    history.push('/VersionsHistory');
+  }
+
+  return (
+    <Button
+      onClick={handleClick}
+      size="small"
+      className="btn-neutral-primary btn-hover">
+      Versions
+    </Button>
+  );
+}
 export default function RcmRep() {
-   const options = {
+  const options = {
     filterType: 'dropdown',
     selectableRows: false,
     rowsPerPage: 5,
     rowsPerPageOptions: [5, 10, 50]
   };
 
-  const columns=[
+  const columns = [
     {
       label: 'Sr',
       name: 'sr',
@@ -47,16 +62,16 @@ export default function RcmRep() {
     {
       label: 'Claim Task',
       name: 'task',
-      options:{
-        sort:false,
-        filter:false,
+      options: {
+        sort: false,
+        filter: false,
         customBodyRender: (value, tableMeta, updateValue) => {
           return (
             <Button
-            size="small"
-            className="btn-neutral-primary btn-hover">
-            Claim
-          </Button>   
+              size="small"
+              className="btn-neutral-primary btn-hover">
+              Claim
+            </Button>
           );
         }
       }
@@ -64,16 +79,12 @@ export default function RcmRep() {
     {
       label: 'Versions',
       name: 'versions',
-      options:{
-        sort:false,
-        filter:false,
+      options: {
+        sort: false,
+        filter: false,
         customBodyRender: (value, tableMeta, updateValue) => {
           return (
-            <Button
-            size="small"
-            className="btn-neutral-primary btn-hover">
-            Versions
-          </Button>   
+           <VersionHistory />
           );
         }
       }
@@ -81,16 +92,16 @@ export default function RcmRep() {
     {
       label: 'Release',
       name: 'release',
-      options:{
-        sort:false,
-        filter:false,
+      options: {
+        sort: false,
+        filter: false,
         customBodyRender: (value, tableMeta, updateValue) => {
           return (
             <Button
-            size="small"
-            className="btn-neutral-primary btn-hover">
-            Release
-          </Button>   
+              size="small"
+              className="btn-neutral-primary btn-hover">
+              Release
+            </Button>
           );
         }
       }
@@ -106,50 +117,50 @@ export default function RcmRep() {
     {
       label: 'Actions',
       name: 'action',
-      options:{
-        sort:false,
-        filter:false,
+      options: {
+        sort: false,
+        filter: false,
         customBodyRender: (value, tableMeta, updateValue) => {
           return (
-             <>
-             <ViewClaim />
-             <Task />
-             </>
+            <>
+              <ViewClaim />
+              <Task />
+            </>
           );
         }
       }
     }
   ];
-  const data=[
+  const data = [
     {
-      sr:1,
-      patient:"Mr John",
-      insurance:"Health Ins"
+      sr: 1,
+      patient: "Mr John",
+      insurance: "Health Ins"
     },
     {
-      sr:2,
-      patient:"Sara	Khan",
-      insurance:"Health Ins"
+      sr: 2,
+      patient: "Sara	Khan",
+      insurance: "Health Ins"
     },
     {
-      sr:3,
-      patient:"Narjis	Menasria",
-      insurance:"Dentist Ins"
+      sr: 3,
+      patient: "Narjis	Menasria",
+      insurance: "Dentist Ins"
     },
     {
-      sr:4,
-      patient:"John	Smith",
-      insurance:"Health Ins"
+      sr: 4,
+      patient: "John	Smith",
+      insurance: "Health Ins"
     },
     {
-      sr:5,
-      patient:"Narjis	Menasria",
-      insurance:"Dentist Ins"
+      sr: 5,
+      patient: "Narjis	Menasria",
+      insurance: "Dentist Ins"
     },
     {
-      sr:6,
-      patient:"Erik Hernandez",
-      insurance:"Health Ins"
+      sr: 6,
+      patient: "Erik Hernandez",
+      insurance: "Health Ins"
     },
   ];
   return (
@@ -166,12 +177,12 @@ export default function RcmRep() {
           </div>
         </div>
         <CardContent>
-        <MUIDataTable
-                  data={data}
-                  columns={columns}
-                  options={options}
-                   
-             />
+          <MUIDataTable
+            data={data}
+            columns={columns}
+            options={options}
+
+          />
         </CardContent>
       </Card>
     </>

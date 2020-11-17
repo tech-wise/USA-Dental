@@ -100,11 +100,7 @@ const columns = [
       filter: false,
       customBodyRender: (value, tableMeta, updateValue) => {
         return (
-          <Button
-            size="small"
-            className="btn-neutral-primary btn-hover">
-            Versions
-          </Button>
+          <VersionHistory />
         );
       }
     }
@@ -167,37 +163,53 @@ const data = [
     name: 'Narjis Menasria',
     service: '10/09/2020',
     total: '110.58',
-    sent:'12/25/20',
+    sent: '12/25/20',
   },
   {
     sr: 2,
     name: 'Sania Khan',
     service: '10/09/2020',
     total: '110.58',
-    sent:'12/25/20',
+    sent: '12/25/20',
   },
   {
     sr: 3,
     name: 'Libu Warkey',
     service: '10/09/2020',
     total: '110.58',
-    sent:'12/25/20',
+    sent: '12/25/20',
   },
   {
     sr: 5,
     name: 'Shaheen(ortho) Menasria',
     service: '10/09/2020',
     total: '110.58',
-    sent:'12/25/20',
+    sent: '12/25/20',
   },
   {
     sr: 6,
     name: 'Narjis Menasria',
     service: '10/09/2020',
     total: '110.58',
-    sent:'12/25/20',
+    sent: '12/25/20',
   },
 ];
+function VersionHistory() {
+  let history = useHistory();
+
+  function handleClick() {
+    history.push('/VersionsHistory');
+  }
+
+  return (
+    <Button
+      onClick={handleClick}
+      size="small"
+      className="btn-neutral-primary btn-hover">
+      Versions
+    </Button>
+  );
+}
 function ViewClaim() {
   let history = useHistory();
 
@@ -841,7 +853,7 @@ class PPO90NotWork extends Component {
             </div>
           </div>
           <CardContent>
-            <MUIDataTable data={data} columns={columns} options={options} /> 
+            <MUIDataTable data={data} columns={columns} options={options} />
           </CardContent>
         </Card>
       </>

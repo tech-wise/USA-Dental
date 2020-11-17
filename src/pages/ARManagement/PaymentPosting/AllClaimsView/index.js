@@ -101,11 +101,7 @@ const columns = [
       filter:false,
       customBodyRender: (value, tableMeta, updateValue) => {
         return (
-          <Button
-          size="small"
-          className="btn-neutral-primary btn-hover">
-          Versions
-        </Button>   
+         <VersionHistory />
         );
       }
     }
@@ -201,6 +197,22 @@ const data = [
   },
 ];
 
+function VersionHistory() {
+  let history = useHistory();
+
+  function handleClick() {
+    history.push('/VersionsHistory');
+  }
+
+  return (
+    <Button
+      onClick={handleClick}
+      size="small"
+      className="btn-neutral-primary btn-hover">
+      Versions
+    </Button>
+  );
+}
 function ViewClaim() {
   let history = useHistory();
 

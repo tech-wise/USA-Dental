@@ -32,6 +32,7 @@ import AddNewTFLClaim from './pages/CurrentBilling/ClaimsApproachingTFL/AddNewTF
 import EditTFLClaim from './pages/CurrentBilling/ClaimsApproachingTFL/EditTFLClaim';
 import ViewTFLClaimReport from './pages/CurrentBilling/ClaimsApproachingTFL/ViewTFLClaimReport';
 import RcmReportListing from './pages/ARManagement/RcmReport/RcmReportListing';
+import VersionHistory from './pages/VersionsHistory';
 import RcmReportView from './pages/ARManagement/RcmReport/RcmReportView';
 import RcmActivityDashboard from './pages/ARManagement/ActivityReport/Dashboard';
 import RcmActivityTotalClaims from './pages/ARManagement/ActivityReport/TotalClaims';
@@ -75,10 +76,10 @@ import AddQCReport from './pages/IncentiveModule/DailyQCReport/AddQCReport';
 import EditQCReport from './pages/IncentiveModule/DailyQCReport/EditQCReport';
 import Snippets from './pages/OfficeManagement/ProductionandCollection/Snippets';
 import AddSnippets from './pages/OfficeManagement/ProductionandCollection/AddSnipets';
-import EditSnippets from './pages/OfficeManagement/ProductionandCollection/EditSnippets'; 
+import EditSnippets from './pages/OfficeManagement/ProductionandCollection/EditSnippets';
 import ViewSnippets from './pages/OfficeManagement/ProductionandCollection/ViewSnippets';
 import ProviderCollections from './pages/OfficeManagement/ProviderProductionandcollection/ProviderCollections';
-import ViewProviderCollections from './pages/OfficeManagement/ProviderProductionandcollection/ViewProviderCollections'; 
+import ViewProviderCollections from './pages/OfficeManagement/ProviderProductionandcollection/ViewProviderCollections';
 import Documents from './pages/OfficeManagement/DocumentCenter/Documents';
 import AddDocument from './pages/OfficeManagement/DocumentCenter/AddDocument';
 import BridgeDoc from './pages/OfficeManagement/EBridge/BridgeDoc';
@@ -93,7 +94,7 @@ import ViewAccountCheck from './pages/Accounting/CheckDeposit/ViewCheck';
 import EditAccountCheck from './pages/Accounting/CheckDeposit/EditCheck';
 import AccountExpenses from './pages/Accounting/AccountExpenses/Expenses';
 import AddExpenses from './pages/Accounting/AccountExpenses/AddExpenses';
-import EditExpenses from './pages/Accounting/AccountExpenses/EditExpenses'; 
+import EditExpenses from './pages/Accounting/AccountExpenses/EditExpenses';
 import ViewExpenses from './pages/Accounting/AccountExpenses/ViewExpenses';
 import AccountsPayrole from './pages/Accounting/Payments/AccountsPayrole';
 import EV48Hours from './pages/EligibilityVerification/EV48Hours';
@@ -199,6 +200,7 @@ const Routes = () => {
                 '/ViewTFLClaimReport',
                 '/ARDashboard',
                 '/RcmReport',
+                '/VersionsHistory',
                 '/RcmReportView',
                 '/RcmActivityDashboard',
                 '/RcmActivityTotalClaims',
@@ -281,7 +283,7 @@ const Routes = () => {
                     exit="out"
                     variants={pageVariants}
                     transition={pageTransition}>
-                      <Route
+                    <Route
                       path="/Profile"
                       component={Profile}
                     />
@@ -320,6 +322,7 @@ const Routes = () => {
                       component={ViewTFLClaimReport}
                     />
                     <Route path="/RcmReport" component={RcmReportListing} />
+                    <Route path="/VersionsHistory" component={VersionHistory} />
                     <Route path="/RcmReportView" component={RcmReportView} />
                     <Route
                       path="/RcmActivityDashboard"
