@@ -6,6 +6,7 @@ import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableRow from '@material-ui/core/TableRow';
+import TableHead from '@material-ui/core/TableHead';
 import Button from '@material-ui/core/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const useStyles = makeStyles({
@@ -16,7 +17,10 @@ const useStyles = makeStyles({
     fontSize: "1rem",
     color: "#253053",
     fontWeight: 500,
-  }
+  },
+  endRow: {
+     backgroundColor:"#F4F5FD",
+  },
 });
 
 export default function VersionsHistory() {
@@ -32,7 +36,7 @@ export default function VersionsHistory() {
             </h4>
           </div>
           <div className="card-header--actions">
-          <div>
+            <div>
               <Button className="btn-neutral-info mx-1 shadow-none d-30 border-0 p-0 d-inline-flex align-items-center justify-content-center">
                 <FontAwesomeIcon
                   icon={['fas', 'print']}
@@ -51,75 +55,87 @@ export default function VersionsHistory() {
         <CardContent>
           <TableContainer>
             <Table className={classes.table} aria-label="simple table">
-              {/* <TableHead>
-                <TableRow>
-                  <TableCell align="center">---------</TableCell>
-                  <TableCell align="center">-----</TableCell>
-                  <TableCell align="center">-----</TableCell>
-                  <TableCell align="center">------</TableCell>
-                 </TableRow>
-              </TableHead> */}
+              <TableHead>
+                <TableRow className={classes.heading}>
+                  <TableCell>User ID</TableCell>
+                  <TableCell>User Name</TableCell>
+                  <TableCell>Time</TableCell>
+                  <TableCell>Field</TableCell>
+                  <TableCell>Orignal</TableCell>
+                  <TableCell>Current</TableCell>
+                </TableRow>
+              </TableHead>
+              {/* </Table>
+             <Table> */}
               <TableBody>
                 <TableRow>
-                  <TableCell component="th" scope="row" className={classes.heading}>
-                    Biller QC
+                  <TableCell >
+                    User01
                     </TableCell>
-                  <TableCell ></TableCell>
-                  <TableCell component="th" scope="row" className={classes.heading}>
-                    Group Num
+                  <TableCell>John Doe</TableCell>
+                  <TableCell>
+                    11/17/2020 10:30AM
                     </TableCell>
+                  <TableCell>Biller QC</TableCell>
+                  <TableCell>Blank</TableCell>
+                  <TableCell>No Collections</TableCell>
+                </TableRow>
+                {/* --- */}
+                <TableRow>
+                  <TableCell >
+                  </TableCell>
                   <TableCell></TableCell>
+                  <TableCell>
+                  </TableCell>
+                  <TableCell>Biller Status</TableCell>
+                  <TableCell>Paid not Posted</TableCell>
+                  <TableCell>Paid and Posted</TableCell>
                 </TableRow>
                 {/* --- */}
                 <TableRow>
-                  <TableCell component="th" scope="row" className={classes.heading}>
-                    Primary/Secondary
+                  <TableCell >
+                  </TableCell>
+                  <TableCell></TableCell>
+                  <TableCell>
+                  </TableCell>
+                  <TableCell>Admin Status</TableCell>
+                  <TableCell>Null</TableCell>
+                  <TableCell>Written Off</TableCell>
+                </TableRow>
+                <TableRow className={classes.endRow}><TableCell colSpan="6"></TableCell></TableRow>
+                <TableRow>
+                  <TableCell >
+                    Admin
                     </TableCell>
-                  <TableCell >Primary</TableCell>
-                  <TableCell component="th" scope="row" className={classes.heading}>
-                    Sent
+                  <TableCell>Administrator</TableCell>
+                  <TableCell>
+                    11/17/2020 10:30AM
                     </TableCell>
-                  <TableCell>05-7-2019</TableCell>
+                  <TableCell>Biller QC</TableCell>
+                  <TableCell>Blank</TableCell>
+                  <TableCell>ICF Missing</TableCell>
                 </TableRow>
                 {/* --- */}
                 <TableRow>
-                  <TableCell component="th" scope="row" className={classes.heading}>
-                    Estimate
-                    </TableCell>
-                  <TableCell >495.00</TableCell>
-                  <TableCell component="th" scope="row" className={classes.heading}>
-                    Total
-                    </TableCell>
-                  <TableCell>405.50</TableCell>
+                  <TableCell >
+                  </TableCell>
+                  <TableCell></TableCell>
+                  <TableCell>
+                  </TableCell>
+                  <TableCell>Biller Status</TableCell>
+                  <TableCell>Paid and Posted</TableCell>
+                  <TableCell>Need Approval</TableCell>
                 </TableRow>
                 {/* --- */}
                 <TableRow>
-                  <TableCell component="th" scope="row" className={classes.heading}>
-                    Caller Notes
-                    </TableCell>
-                  <TableCell ></TableCell>
-                  <TableCell component="th" scope="row" className={classes.heading}>
-                    Caller Status
-                    </TableCell>
-                  <TableCell>AEOB</TableCell>
-                </TableRow>
-                {/* ------- */}
-                <TableRow>
-                  <TableCell component="th" scope="row" className={classes.heading}>
-                    Biller Status
-                    </TableCell>
-                  <TableCell >Paid and Posted</TableCell>
-                  <TableCell component="th" scope="row" className={classes.heading}>
-                    Biller Comments
-                    </TableCell>
-                  <TableCell>Payment Receiver Credit Card to Ins.</TableCell>
-                </TableRow>
-                {/* ------- */}
-                <TableRow>
-                  <TableCell component="th" scope="row" className={classes.heading}>
-                    File Upload
-                    </TableCell>
-                  <TableCell colSpan="3" className="text-secondary">ABC_Gupta_5214523.pdf</TableCell>
+                  <TableCell >
+                  </TableCell>
+                  <TableCell></TableCell>
+                  <TableCell>
+                  </TableCell>
+                  <TableCell>Admin Status</TableCell>
+                  <TableCell>Written Off</TableCell>
+                  <TableCell>N/A</TableCell>
                 </TableRow>
               </TableBody>
             </Table>
