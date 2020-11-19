@@ -17,7 +17,7 @@ import { useHistory } from 'react-router-dom';
 import PageviewIcon from '@material-ui/icons/Pageview';
 import { withStyles } from '@material-ui/styles';
 import MUIDataTable from 'mui-datatables';
-
+import VersionHistory from './../../../VersionsHistoryModal';
 const useStyles = (theme) => ({
   root: {
     color: '#21BFD9',
@@ -197,22 +197,22 @@ const data = [
   },
 ];
 
-function VersionHistory() {
-  let history = useHistory();
+// function VersionHistory() {
+//   let history = useHistory();
 
-  function handleClick() {
-    history.push('/VersionsHistory');
-  }
+//   function handleClick() {
+//     history.push('/VersionsHistory');
+//   }
 
-  return (
-    <Button
-      onClick={handleClick}
-      size="small"
-      className="btn-neutral-primary btn-hover">
-      Versions
-    </Button>
-  );
-}
+//   return (
+//     <Button
+//       onClick={handleClick}
+//       size="small"
+//       className="btn-neutral-primary btn-hover">
+//       Versions
+//     </Button>
+//   );
+// }
 function ViewClaim() {
   let history = useHistory();
 

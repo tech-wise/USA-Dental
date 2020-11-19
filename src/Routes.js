@@ -32,7 +32,7 @@ import AddNewTFLClaim from './pages/CurrentBilling/ClaimsApproachingTFL/AddNewTF
 import EditTFLClaim from './pages/CurrentBilling/ClaimsApproachingTFL/EditTFLClaim';
 import ViewTFLClaimReport from './pages/CurrentBilling/ClaimsApproachingTFL/ViewTFLClaimReport';
 import RcmReportListing from './pages/ARManagement/RcmReport/RcmReportListing';
-import VersionHistory from './pages/VersionsHistory';
+import VersionHistory from './pages/VersionsHistoryComponent';
 import RcmReportView from './pages/ARManagement/RcmReport/RcmReportView';
 import RcmActivityDashboard from './pages/ARManagement/ActivityReport/Dashboard';
 import RcmActivityTotalClaims from './pages/ARManagement/ActivityReport/TotalClaims';

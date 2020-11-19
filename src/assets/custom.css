@@ -80,3 +80,7 @@ option.hoverColor-Theme:active{
 .MuiToolbar-root .MuiSvgIcon-root{
     color: #21BFD9;
 }
+.version-modal-btn{
+   float: "right" !important; 
+   margin-top: "-53px";  
+}
